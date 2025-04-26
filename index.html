@@ -1,1 +1,108 @@
-<h1>tes</h1>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Latest Pages - Landing SEO</title>
+  <meta name="description" content="Temukan artikel terbaru, harga terbaik, dan rating produk di website kami. Update setiap hari!">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Game Terbaru 2025 Link Anti Rungkad Mahjong",
+    "url": "https://berita-klaten.github.io/news/"
+  }
+  </script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col items-center p-6">
+
+  <!-- Breadcrumb -->
+  <nav class="w-full max-w-6xl text-sm mb-4" aria-label="Breadcrumb">
+    <ol class="list-reset flex text-gray-600">
+      <li><a href="/" class="text-blue-600 hover:underline">Home</a></li>
+      <li><span class="mx-2">/</span></li>
+      <li class="text-gray-500">Latest Pages</li>
+    </ol>
+  </nav>
+
+  <!-- Artikel Utama -->
+<section class="w-full max-w-6xl bg-white rounded-2xl shadow-md p-8 mb-10">
+    <!-- Slider Besar -->
+    <div class="relative w-full overflow-hidden rounded-xl mb-6 h-[400px]" id="slider">
+      <div class="flex transition-transform duration-500 h-full" id="sliderInner">
+        <img src="https://sekar4dmin.top/images/upload-Slides-20250221210150.jpg" class="w-full flex-shrink-0 object-cover" alt="Slide 1">
+        <img src="https://solokekar.top/images/upload-Slides-20250420150123.jpg" class="w-full flex-shrink-0 object-cover" alt="Slide 2">
+        <img src="https://okbos86gold.top/images/upload-Slides-20250217205251.jpg" class="w-full flex-shrink-0 object-cover" alt="Slide 3">
+        <img src="https://aretoto2.soc-are19.xyz/images/upload-Slides-20250217235947.jpg" class="w-full flex-shrink-0 object-cover" alt="Slide 4">
+        <img src="https://mik4down.top/images/upload-Slides-20250420144440.jpg" class="w-full flex-shrink-0 object-cover" alt="Slide 5">
+      </div>
+      <!-- Tombol Prev/Next -->
+      <button id="prevBtn" class="absolute top-1/2 left-3 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 z-10">
+        ‹
+      </button>
+      <button id="nextBtn" class="absolute top-1/2 right-3 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 z-10">
+        ›
+      </button>
+    </div>
+  
+    <h1 class="text-3xl font-bold text-blue-700 mb-4">Selamat Datang di Rekomendasi Link Gacor Terbaru 2025 Anti Rungkad</h1>
+    <p class="text-gray-700 leading-relaxed mb-4">
+        Dalam petualangan ini, pemain tidak hanya mengejar hadiah, tetapi juga mengejar pengalaman yang mengubah cara mereka melihat dunia. Keberhasilan dalam permainan ini mengajarkan kita tentang ketekunan, keberanian, dan pentingnya mengambil risiko. Dengan setiap kemenangan yang diraih, pemain merasa lebih terhubung dengan diri mereka sendiri dan lebih menghargai usaha yang telah dilakukan.
+        <br>
+        <br>
+        Petualangan cuan ini juga menyoroti pentingnya kesabaran dan strategi. Pemain belajar untuk tidak hanya berfokus pada hasil akhir, tetapi juga menikmati proses yang dilalui. Kemenangan yang diraih sering kali menjadi simbol dari perjuangan dan usaha keras, memberikan makna yang lebih mendalam di balik angka. Dengan setiap petualangan, pemain dapat merasakan bagaimana permainan ini mempengaruhi tidak hanya dompet mereka, tetapi juga hati dan jiwa mereka, mengubah cara mereka mendefinisikan kesuksesan.
+    </p>
+    <div class="mt-4">
+      <label for="kategori" class="block text-gray-600 mb-2">Pilih Kategori:</label>
+      <select id="kategori" class="w-full p-3 border rounded-lg">
+        <option value="">Semua Kategori</option>
+        <option value="Mahjong">Mahjong</option>
+        <option value="Gacor">Gacor</option>
+        <option value="LinkAlternative">Link Alternative</option>
+      </select>
+    </div>
+  </section>
+  
+
+  <!-- Latest Posts -->
+  <h2 class="text-2xl font-bold text-blue-600 mb-6">Latest Posts</h2>
+
+  <div id="fileList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+    <!-- Card-card dari JS -->
+  </div>
+
+  <script src="script.js"></script>
+
+  <!-- Slider Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sliderInner = document.getElementById('sliderInner');
+      const nextBtn = document.getElementById('nextBtn');
+      const prevBtn = document.getElementById('prevBtn');
+      const totalSlides = sliderInner.children.length;
+      let currentIndex = 0;
+
+      function updateSlider() {
+        sliderInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlider();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlider();
+      });
+
+      // Auto-slide setiap 5 detik
+      setInterval(() => {
+        nextBtn.click();
+      }, 5000);
+    });
+  </script>
+
+</body>
+</html>
