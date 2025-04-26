@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               </div>
             </div>
 
-            <a href="/latests/${page.fileName}" class="inline-block w-full text-center px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">
+            <a href="./latests/${page.fileName}" class="inline-block w-full text-center px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">
               Lihat Detail
             </a>
           `;
