@@ -1,0 +1,24 @@
+[
+    {
+      "nama": "BLBL ALSDASD",
+      "fileName": "blbals-balsdasd.html",
+      "photoUrl": "https://david-ford.com/pb/img/lts.jpeg",
+      "harga": "150000",
+      "rating": 4.5
+    },
+    {
+      "nama": "Contoh Kedua",
+      "fileName": "contoh-kedua.html",
+      "photoUrl": "https://www.okazaki-renaissance.org/wp-content/uploads/2024/06/slot.jpg",
+      "harga": "200000",
+      "rating": 4.7
+    },
+    {
+      "nama": "Contoh Ketiga",
+      "fileName": "contoh-ketiga.html",
+      "photoUrl": "https://r2.community.samsung.com/t5/image/serverpage/image-id/3685049i845B7C5CB40D3B1F/image-size/large?v=v2&px=999",
+      "harga": "0",
+      "rating": 5
+    }
+  ]
+  
