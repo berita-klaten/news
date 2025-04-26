@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const fileList = document.getElementById('fileList');
   
     try {
-      const res = await fetch('/latests/pages.json'); // ambil JSON
+      const res = await fetch('./latests/pages.json'); // ambil JSON
       const pages = await res.json();
   
       if (Array.isArray(pages) && pages.length > 0) {
