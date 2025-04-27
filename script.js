@@ -4,23 +4,31 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     const res = await fetch('./latests/pages.json'); // ambil JSON
     const pages = await res.json();
-  
+
     // Gunakan Set untuk memastikan tidak ada data duplikat berdasarkan fileName
     const seenFileNames = new Set();
-  
+    
     if (Array.isArray(pages) && pages.length > 0) {
       pages.forEach(page => {
+        console.log(page);  // Untuk debugging, lihat data yang diterima
+
         // Cek jika fileName sudah ada dalam Set, kalau ada skip
         if (seenFileNames.has(page.fileName)) return;
 
         // Masukkan fileName ke dalam Set untuk cek duplikat
         seenFileNames.add(page.fileName);
-        
+
+        // Cek data validitas
+        if (!page.fileName || !page.photoUrl || !page.nama) {
+          console.warn('Data invalid:', page); // Memberi tahu jika ada data yang tidak lengkap
+          return;
+        }
+
         const card = document.createElement('div');
         card.className = 'bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition p-4';
         card.setAttribute('itemscope', '');
         card.setAttribute('itemtype', 'https://schema.org/Product');
-  
+
         card.innerHTML = `
           <a href="./latests/${page.fileName}" class="block mb-4">
             <img src="${page.photoUrl}" alt="${page.nama}" class="w-full h-48 object-cover rounded-lg">
@@ -49,9 +57,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             {
               "@context": "https://schema.org/",
               "@type": "Product",
-              "name": "${page.nama}",
-              "image": "${page.photoUrl}",
-              "description": "${page.deskripsi || 'Baca informasi lengkap hanya di sini.'}",
+              "name": "${page.nama || 'Nama Produk Tidak Tersedia'}",
+              "image": "${page.photoUrl || 'default_image_url.jpg'}",
+              "description": "${page.deskripsi || 'Deskripsi produk tidak tersedia'}",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "IDR",
@@ -60,8 +68,8 @@ document.addEventListener('DOMContentLoaded', async () => {
               },
               "aggregateRating": {
                 "@type": "AggregateRating",
-                "ratingValue": "${page.rating || '5.0'}",
-                "reviewCount": "${page.reviewCount || '10'}"
+                "ratingValue": "${page.rating || '0'}",
+                "reviewCount": "${page.reviewCount || '0'}"
               }
             }
           </script>
