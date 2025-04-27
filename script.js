@@ -1,17 +1,26 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const fileList = document.getElementById('fileList');
-
+  
   try {
     const res = await fetch('./latests/pages.json'); // ambil JSON
     const pages = await res.json();
-
+  
+    // Gunakan Set untuk memastikan tidak ada data duplikat berdasarkan fileName
+    const seenFileNames = new Set();
+  
     if (Array.isArray(pages) && pages.length > 0) {
       pages.forEach(page => {
+        // Cek jika fileName sudah ada dalam Set, kalau ada skip
+        if (seenFileNames.has(page.fileName)) return;
+
+        // Masukkan fileName ke dalam Set untuk cek duplikat
+        seenFileNames.add(page.fileName);
+        
         const card = document.createElement('div');
         card.className = 'bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition p-4';
         card.setAttribute('itemscope', '');
         card.setAttribute('itemtype', 'https://schema.org/Product');
-
+  
         card.innerHTML = `
           <a href="./latests/${page.fileName}" class="block mb-4">
             <img src="${page.photoUrl}" alt="${page.nama}" class="w-full h-48 object-cover rounded-lg">
@@ -57,7 +66,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
           </script>
         `;
-
 
         fileList.appendChild(card);
       });
