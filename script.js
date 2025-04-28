@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.createElement('div');
         card.className = 'bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition p-4';
         card.innerHTML = `
-          <a href="./latests/${p.fileName}" class="block mb-4">
+          <a href="/${p.fileName}" class="block mb-4">
             <img src="${p.photoUrl}" alt="${p.nama}" class="w-full h-48 object-cover rounded-lg">
           </a>
           <h2 class="text-lg font-semibold text-blue-700 mb-4">${p.nama}</h2>
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="text-sm text-gray-500">(${p.rating ?? 5})</span>
             </div>
           </div>
-          <a href="./latests/${p.fileName}" class="inline-block w-full text-center px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">
+          <a href="/${p.fileName}" class="inline-block w-full text-center px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">
             Lihat Detail
           </a>`;
         fileList.appendChild(card);
